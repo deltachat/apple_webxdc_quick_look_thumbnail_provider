@@ -59,7 +59,6 @@
 		21E1A8B22AAE1AC300319671 /* ThumbnailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailProvider.swift; sourceTree = "<group>"; };
 		21E1A8B42AAE1AC300319671 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21E1A8B52AAE1AC300319671 /* thumbnail.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = thumbnail.entitlements; sourceTree = "<group>"; };
-		21E1A8C02AAEB1E300319671 /* ZIPFoundation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ZIPFoundation; path = "/Users/bb/Library/Developer/Xcode/DerivedData/documentapptest-erpxmlxtbxdvdvfttzdypgceyprq/SourcePackages/checkouts/ZIPFoundation"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +129,6 @@
 			children = (
 				21E1A8AD2AAE1AC300319671 /* QuickLookThumbnailing.framework */,
 				21E1A8AF2AAE1AC300319671 /* Quartz.framework */,
-				21E1A8C02AAEB1E300319671 /* ZIPFoundation */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
