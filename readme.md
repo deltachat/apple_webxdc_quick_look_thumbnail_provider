@@ -18,3 +18,5 @@ To see webxdc app icon instead of zip file icon.
 To build for iOS you need to change in thumbnailing extension:
 - base sdk -> to iOS
 - buildphases -> link with libraries -> remove quartz framework
+
+Note that to test changes properly on iOS, you need to install/refresh the parent app, injecting/running just the extension does not work for some reason.

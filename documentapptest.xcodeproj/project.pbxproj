@@ -12,12 +12,12 @@
 		21E1A89A2AAE18E400319671 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E1A8992AAE18E400319671 /* ContentView.swift */; };
 		21E1A89C2AAE18E500319671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21E1A89B2AAE18E500319671 /* Assets.xcassets */; };
 		21E1A8A12AAE18E500319671 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21E1A8A02AAE18E500319671 /* Preview Assets.xcassets */; };
-		21E1A8AE2AAE1AC300319671 /* QuickLookThumbnailing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E1A8AD2AAE1AC300319671 /* QuickLookThumbnailing.framework */; };
-		21E1A8B02AAE1AC300319671 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E1A8AF2AAE1AC300319671 /* Quartz.framework */; };
+		21E1A8AE2AAE1AC300319671 /* QuickLookThumbnailing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E1A8AD2AAE1AC300319671 /* QuickLookThumbnailing.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		21E1A8B32AAE1AC300319671 /* ThumbnailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E1A8B22AAE1AC300319671 /* ThumbnailProvider.swift */; };
 		21E1A8B82AAE1AC300319671 /* thumbnail.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 21E1A8AB2AAE1AC300319671 /* thumbnail.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		21E1A8BF2AAEAB7800319671 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 21E1A8BE2AAEAB7800319671 /* ZIPFoundation */; };
 		21E1A8C22AAEB1E800319671 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 21E1A8C12AAEB1E800319671 /* ZIPFoundation */; };
+		21F2DEA12AC2199E00547E7D /* TOMLDecoder in Frameworks */ = {isa = PBXBuildFile; productRef = 21F2DEA02AC2199E00547E7D /* TOMLDecoder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,8 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21F2DEA12AC2199E00547E7D /* TOMLDecoder in Frameworks */,
 				21E1A8AE2AAE1AC300319671 /* QuickLookThumbnailing.framework in Frameworks */,
-				21E1A8B02AAE1AC300319671 /* Quartz.framework in Frameworks */,
 				21E1A8C22AAEB1E800319671 /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,6 +183,7 @@
 			name = thumbnail;
 			packageProductDependencies = (
 				21E1A8C12AAEB1E800319671 /* ZIPFoundation */,
+				21F2DEA02AC2199E00547E7D /* TOMLDecoder */,
 			);
 			productName = thumbnail;
 			productReference = 21E1A8AB2AAE1AC300319671 /* thumbnail.appex */;
@@ -217,6 +218,7 @@
 			mainGroup = 21E1A8892AAE18E400319671;
 			packageReferences = (
 				21E1A8BD2AAEAB7800319671 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
+				21F2DE9F2AC2199E00547E7D /* XCRemoteSwiftPackageReference "TOMLDecoder" */,
 			);
 			productRefGroup = 21E1A8932AAE18E400319671 /* Products */;
 			projectDirPath = "";
@@ -396,6 +398,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"documentapptest/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -437,6 +440,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"documentapptest/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -472,10 +476,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = thumbnail/thumbnail.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5R943V57MY;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = thumbnail/Info.plist;
@@ -490,6 +494,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = chat.delta.webxdc.documentapptest.thumbnail;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -501,10 +506,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = thumbnail/thumbnail.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5R943V57MY;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = thumbnail/Info.plist;
@@ -519,6 +524,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = chat.delta.webxdc.documentapptest.thumbnail;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -567,6 +573,14 @@
 				minimumVersion = 0.9.16;
 			};
 		};
+		21F2DE9F2AC2199E00547E7D /* XCRemoteSwiftPackageReference "TOMLDecoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dduan/TOMLDecoder";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -579,6 +593,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 21E1A8BD2AAEAB7800319671 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
 			productName = ZIPFoundation;
+		};
+		21F2DEA02AC2199E00547E7D /* TOMLDecoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21F2DE9F2AC2199E00547E7D /* XCRemoteSwiftPackageReference "TOMLDecoder" */;
+			productName = TOMLDecoder;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

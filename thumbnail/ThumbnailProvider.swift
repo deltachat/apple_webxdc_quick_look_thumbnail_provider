@@ -7,6 +7,9 @@
 
 import QuickLookThumbnailing
 import ZIPFoundation
+import CoreText
+import TOMLDecoder
+
 
 class ThumbnailProvider: QLThumbnailProvider {
     
@@ -51,6 +54,7 @@ class ThumbnailProvider: QLThumbnailProvider {
         }
         
         var appIcon: CGImage? = nil
+        var app_name:String? = nil
      
         do {
             var data = Data()
@@ -78,6 +82,26 @@ class ThumbnailProvider: QLThumbnailProvider {
                 }
             }
             
+
+            
+            if archive["manifest.toml"] != nil {
+                var tomlData = Data()
+                try archive.extract(archive["manifest.toml"]!, skipCRC32: true, consumer: { (chunk) in
+                    print("manifest", chunk.count)
+                    tomlData.append(chunk)
+                })
+                
+                struct Manifest: Codable {
+                    let name: String
+                }
+
+                let manifest = try TOMLDecoder().decode(Manifest.self, from: tomlData)
+                app_name = manifest.name
+                print(manifest)
+            }
+            
+            
+          
             
         } catch {
             print("Extracting entry from archive failed with error:\(error)")
@@ -97,9 +121,24 @@ class ThumbnailProvider: QLThumbnailProvider {
             
             let icon_size = request.maximumSize.width
             
-            let icon_rect = CGRect(origin: CGPoint(x: 0, y: request.maximumSize.height / 2.0), size: CGSize(width:icon_size, height:icon_size))
+            let icon_rect = CGRect(origin: CGPoint(x: request.maximumSize.width / 2.0, y: (request.maximumSize.height / 2.0)+5), size: CGSize(width:icon_size, height: icon_size))
             
             context.draw(icon, in: icon_rect)
+            
+            
+            if app_name != nil {
+                //let font = CTFontCreateWithName("Arial" as CFString, 32, nil)
+                let attributedString = NSAttributedString(string: app_name!,
+                                                          attributes: [:])
+                let line = CTLineCreateWithAttributedString(attributedString)
+                //let stringRect = CTLineGetImageBounds(line, context)
+
+                context.textPosition = CGPoint(x:0, y:0)
+                
+
+                CTLineDraw(line, context)
+            }
+            
             
             // todo maybe draw app name below icon?
             
